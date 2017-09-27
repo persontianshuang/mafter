@@ -91,5 +91,15 @@ class Sub:
         # var_to_dict(start_seconds,end_seconds)
         return (start_seconds,end_seconds)
 
-# d = Sub('/Users/user/language/sp/lr/3.srt').doublesrt()
-# print(list(d))
+# d = Sub('/Users/user/language/sp/半泽直树/1/1c.srt').single_srt()
+# print(d)
+# from db.subs import Subs
+#
+# for x in Subs.objects(name="半泽直树1"):
+#     for y in d:
+#         if x.start_seconds==y['start_seconds'] and x.end_seconds==y['end_seconds']:
+#             x.jp = y['sentence']
+#             x.save()
+
+
+

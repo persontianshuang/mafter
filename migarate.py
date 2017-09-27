@@ -15,13 +15,16 @@ def copy_file_in_dir(sourse_dir,target_dir):
             shutil.copy(target_file,sourse_file)
 
 def remove_py():
-    remove_file_in_dir('/Users/user/pynew/project/chjia/r1/static/static/css')
-    remove_file_in_dir('/Users/user/pynew/project/chjia/r1/static/static/js')
-    remove_file_in_dir('/Users/user/pynew/project/chjia/r1/templates')
+    base = '/Users/user/cs_program/chuja/mafter'
+    remove_file_in_dir(base + '/static/static/css')
+    remove_file_in_dir(base + '/static/static/js')
+    remove_file_in_dir(base + '/templates')
 
 def copy_vue():
-    copy_file_in_dir('/Users/user/pynew/project/chjia/r1/static/static/css','/Users/user/pynew/web/nihongo/dist/static/css')
-    copy_file_in_dir('/Users/user/pynew/project/chjia/r1/static/static/js','/Users/user/pynew/web/nihongo/dist/static/js')
-    shutil.copy('/Users/user/pynew/web/nihongo/dist/index.html','/Users/user/pynew/project/chjia/r1/templates/index.html')
+    band = '/Users/user/cs_program/chuja/mafter'
+    front = '/Users/user/cs_program/chuja/mfront'
+    copy_file_in_dir(band+'/static/static/css',front+'/dist/static/css')
+    copy_file_in_dir(band+'/static/static/js',front+'/dist/static/js')
+    shutil.copy(front+'/dist/index.html',band+'/templates/index.html')
 remove_py()
 copy_vue()

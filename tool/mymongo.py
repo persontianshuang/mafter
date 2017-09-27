@@ -24,7 +24,7 @@ def backup_db(olddb,oldcolllection,newdb,newcolllection,find_condition={}):
 
 def backup_ssh_db(olddb,oldcolllection,newdb,newcolllection,find_condition={}):
     # [57099:] [58210:] yuanlai
-    sgk_list = list(pymg(olddb,oldcolllection).find(find_condition))
+    sgk_list = list(pymg(olddb,oldcolllection).find(find_condition))[58220:]
     print(len(sgk_list))
     ssh(newdb,newcolllection).insert_many(sgk_list)
 
@@ -33,9 +33,9 @@ def backup_ssh_db(olddb,oldcolllection,newdb,newcolllection,find_condition={}):
 # sentences
 # flow
 # words
-# backup_ssh_db('mynihongo2','sentences','mynihongo2','sentences',find_condition={'flow_name':'言叶之庭'})
+# backup_ssh_db('mynihongo2','sentences','mynihongo2','sentences',find_condition={'flow_name':'半泽直树1'})
 # backup_ssh_db('mynihongo2','sentences','mynihongo2','sentences',find_condition={'belongsto_flow':ObjectId("59acce4fd9f092070ff09f6b")})
-# backup_ssh_db('mynihongo2','flow','mynihongo2','flow',find_condition={'name':'能力考N3'})
+# backup_ssh_db('mynihongo2','flow','mynihongo2','flow',find_condition={'name':'半泽直树1'})
 # backup_ssh_db('mynihongo2','words','mynihongo2','words')
 # backup_ssh_db('mynihongo2','ntext','mynihongo2','ntext')
 # backup_ssh_db('mynihongo2','choose_sentences','mynihongo2','choose_sentences')

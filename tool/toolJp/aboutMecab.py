@@ -37,8 +37,9 @@ class SentenceToMecab():
 
 
     def get_kana(self):
-        # with MeCab() as nm:  "-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd"
-        with MeCab("-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd") as nm:
+        # with MeCab() as nm:  "-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd"  改默认 vi /usr/local/etc/mecabrc
+        # with MeCab("-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd") as nm:
+        with MeCab() as nm:
             for n in nm.parse(str(self.text), as_nodes=True):
                 if not n.is_eos():
                     if n.feature.split(',')[0]!='記号' and n.feature.split(',')[2:]!=['*', '*', '*', '*', '*']:
